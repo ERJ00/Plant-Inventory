@@ -4,6 +4,7 @@ import { HomeIcon, LogIn, LogOut, Sprout } from "lucide-react";
 import ModeToggle from "../ModeToggle";
 import { stackServerApp } from "@/stack";
 import { getUserDetails } from "@/actions/users.actions";
+import { UserButton } from "@stackframe/stack";
 
 async function Navbar() {
   const user = await stackServerApp.getUser();
@@ -63,6 +64,8 @@ async function Navbar() {
                     <span className="hidden lg:inline">Sign Out</span>
                   </Link>
                 </Button>
+
+                <UserButton/>
               </>
             ) : (
               <>
