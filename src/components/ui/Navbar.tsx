@@ -3,13 +3,11 @@ import { Button } from "./button";
 import { HomeIcon, LogIn, LogOut, Sprout } from "lucide-react";
 import ModeToggle from "../ModeToggle";
 import { stackServerApp } from "@/stack";
-import { getUserDetails } from "@/actions/users.actions";
 import { UserButton } from "@stackframe/stack";
 
 async function Navbar() {
   const user = await stackServerApp.getUser();
   const app = stackServerApp.urls;
-  const userProfile = await getUserDetails(user?.id);
 
   return (
     <nav className="sticky top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
